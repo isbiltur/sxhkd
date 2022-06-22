@@ -1,0 +1,35 @@
+super + Escape
+    {pkill -USR1 -x sxhkd;exec notify-send '🔃 sxhkd reloaded'}
+
+super + Return
+    urxvt
+
+super + w; {c,f,l,t}
+    {/usr/bin/chromium,/usr/bin/firefox,/usr/bin/librewolf,/usr/bin/tor-browser}    
+
+{_,super,alt,ctrl} + Print  
+    {maim ~/pics/maim/$(date '+%m-%d-%H:%M:%S').png;notify-send '📸 screenshot saved',maim -u --select ~/pics/maim/$(date '+%m-%d-%H:%M:%S').png;notify-send '📸 snapshot taken of selected area',maim -s | tee ~/pics/maim/$(date '+%m-%d-%H:%M:%S').png | xclip -selection clipboard -t image/png;notify-send '📸 screenshot saved to clipboard',maim -u --select ~/pics/travian/$(date '+%m-%d-%H:%M:%S').png;notify-send '📸 saved to travian'}
+
+super + {numbersign,apostrophe,space,bracketleft,BackSpace}
+    {tdrop -ma -w 1598 -h 50% -y 1 -x 1 -n69 alacritty,tdrop -a -w 50% -h 898 -y 1 -x 1 -n 52 alacritty,$HOME/.local/bin/dswitcher,$HOME/.local/bin/wm_notify_pop,$HOME/.local/bin/dmlogout.sh}
+
+super + shift + {c,g,m,t,BackSpace,Shift_R}
+    {clipmenu -p "clipboard contents:" -l 25,/usr/bin/gcolor2,/usr/bin/leafpad,$HOME/.local/bin/todo,$HOME/.local/bin/fkill,/usr/bin/kitty} 
+
+super + {c,d,n,p,v,z,Backspace}
+    {/usr/bin/codium,dmenu-frecency,$TERMINAL -e /usr/bin/nvim,/usr/bin/thunar,$TERMINAL -e $HOME/.config/vifm/scripts/vifmrun,tdrop -a -w 51% -h 45% -y 5% -x 3% -n 72 st -e ncmpcpp -s playlist;tdrop -a -w 94% -h 40% -y 55% -x 3% -n 74 st -e ncmpcpp -s cava;tdrop -a -w 40% -h 45% -y 5% -x 57% -n 79 st -e ncmpcpp -s browser}
+
+super + {F1,F2,F3,F8,F9}
+    {$HOME/.local/bin/pavolume.sh --togmute;exec notify-send "🔇 audio toggled",$HOME/.local/bin/pavolume.sh --down;exec notify-send "🔉 volume reduced",$HOME/.local/bin/pavolume.sh --up;exec notify-send "🔊 volume increased",networkmanager_dmenu,$HOME/.local/bin/dmwmtools.sh,skippy-xd-runner}
+
+{_} + F12
+    skippy-xd-runner
+
+#super + F5
+#    {tdrop -a -w 35% -h 39% -y 5% -x 10% -n 2 alacritty -e ncmpcpp -s playlist;\
+#    tdrop -a -w 40% -h 825 -y 5% -x 55% -n 9 alacritty -e cava;\
+#    tdrop -a -w 35% -h 336 -y 54% -x 10% -n 4 alacritty -e ncmpcpp -s browser}
+
+super + F6
+    {tdrop -a -w 51% -h 45% -y 5% -x 3% -n 72 alacritty -e ncmpcpp -s playlist;tdrop -a -w 94% -h 40% -y 55% -x 3% -n 74 alacritty -e cava;tdrop -a -w 40% -h 45% -y 5% -x 57% -n 79 alacritty -e ncmpcpp -s browser}    
+
