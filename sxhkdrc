@@ -1,0 +1,47 @@
+super + Escape
+    {pkill -USR1 -x sxhkd;\
+    exec notify-send '🔃 sxhkd reloaded'}
+
+super + Return
+    urxvtc
+
+{_,super} + Print
+    {$HOME/.local/bin/rofi/screenshot.sh,\
+    $HOME/.local/bin/rofi/rofi-screenshot}
+
+super + {numbersign,apostrophe,space,bracketleft,BackSpace,Shift_R}
+    {tdrop -ma -w 1596 -h 66% -y 1 -x 1 -n69 alacritty,\
+    tdrop -a -w 60% -h 896 -y 1 -x 1 -n 52 alacritty,\
+    $HOME/.local/bin/rofi/window.sh,\
+    $HOME/.local/bin/wm_notify_pop,\
+    $HOME/.local/bin/rofi/powermenu.sh,\
+    tdrop -a -w 94% -h 94% -y 3% -x 3% -n 17 kitty -e /usr/bin/clifm}
+
+super + shift + {c,g,n,t,BackSpace}
+    {clipmenu -p "clipboard contents:" -l 25,\
+    /usr/bin/gcolor2,\
+    emacsclient -c -a emacs,\
+    $HOME/.local/bin/todo,\
+    $HOME/.local/bin/dmenu/dmkill} 
+
+super + {c,d,p,v,x}
+    {/usr/bin/codium,\
+    $HOME/.local/bin/rofi/launcher.sh,\
+    /usr/bin/thunar,\
+    urxvt -e $HOME/.config/vifm/scripts/vifmrun,\
+    $HOME/.local/bin/i3lock-extra}
+    
+super + {F1,F2,F3,F6,F7,F8,F9}
+    {$HOME/.local/bin/pavolume.sh --togmute;exec notify-send "🔇 audio toggled",\
+    $HOME/.local/bin/pavolume.sh --down;exec notify-send "🔉 volume reduced",\
+    $HOME/.local/bin/pavolume.sh --up;exec notify-send "🔊 volume increased",\
+    tdrop -a -w 51% -h 45% -y 5% -x 3% -n 72 kitty -e ncmpcpp -s playlist;\
+    tdrop -a -w 94% -h 40% -y 55% -x 3% -n 74 kitty -e cava;\
+    tdrop -a -w 40% -h 45% -y 5% -x 57% -n 79 kitty -e ncmpcpp -s browser,\
+    $HOME/.local/bin/mpd.sh,\
+    $HOME/.local/bin/rofi/wifi,\
+    $HOME/.local/bin/dmwmtools.sh}
+
+{F10,F12}
+    {$HOME/.local/bin/toggletouchpad.sh,\
+    /usr/bin/skippy-xd}
